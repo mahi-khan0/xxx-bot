@@ -78,19 +78,19 @@ module.exports.config = {
          var  h = "https://noobs-apihouse.onrender.com/dipto/album/humaiyun";
            else if ("16" == a.body)
          var  h =
-"https://shaon-all-api-07mo.onrender.com/video/sex";
+"https://noobs-apihouse.onrender.com/dipto/album/sex";
     else if ("17" == a.body)
          var  h =
-"https://shaon-all-api-07mo.onrender.com/video/horny";
+"https://noobs-apihouse.onrender.com/dipto/album/horny";
     else if ("18" == a.body)
          var  h =
-"https://shaon-all-api-07mo.onrender.com/video/item";
+"https://noobs-apihouse.onrender.com/dipto/album/item";
     else if ("19" == a.body)
          var  h =
-"https://shaon-all-api-07mo.onrender.com/video/hot";
+"https://noobs-apihouse.onrender.com/dipto/album/hot";
     else if ("20" == a.body)
          var  h =
-"https://shaon-all-api-07mo.onrender.com/video/capcut";
+"https://noobs-apihouse.onrender.com/dipto/album/capcut";
         return { p, h };
     }
 };
