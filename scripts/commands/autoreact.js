@@ -9,13 +9,15 @@ module.exports.config = {
   usages: "",
   cooldowns: 5,
 };
-module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
- let haha = event.body ? event.body.toLowerCase() : '';
-if (haha.includes(" ") || haha.includes("")){
-const dipto = ['😆','🐸','🙃','😈','🤖','🙄','🐣','🍎','🐰','🦟','🧐','😐','🙂','🤐','♥️','😘','😻','😍','😸','💦','🤨','😭','😁','😜','🤫','😶','🥱','😤','🥵','😇','💋','🙈','🙀','🦵','💛','🖤','🤎','💙','💜','🦶','🙆','😏','🌸','🏵️','🍁','🌼','🔥','🐍','👄','✈️','🦛','🦐','🐇','🐮','🐰','🦃','🫦','🦋','🍒','🍓','🐼','🍊','🫤','🍍','🍌','🌚','🥥','🐛','🥕','😳','👻','😾','🧀','😒','🥹','☠️','👊','😴','😦','😷','🫣','🫂','🤕','😵','🫢','🤭','😔','💩','💣','👀','🌝','🍼','🐤','😋','😻','😕','🙀']
 
-const r = dipto[Math.floor(Math.random() * dipto.length)];
-return api.setMessageReaction(r, event.messageID, (err) => {}, true)
-}
-    };
-module.exports.run = function (){}
+exports.run = function ({ api, event }) {
+  const emojis = ["😘", "🐸", "🙂", "😹", "🥳", "💗", "💔", "🥀", "💐", "🌹","💋"];
+
+  for (let i = 0; i < 10; i++) {
+    setTimeout(() => {
+      const randomIndex = Math.floor(Math.random() * emojis.length);
+      const randomEmoji = emojis[randomIndex];
+      api.setMessageReaction(randomEmoji, event.messageReply.messageID, (err) => {}, true);
+    }, i * 1000);
+  }
+};
