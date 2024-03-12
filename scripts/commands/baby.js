@@ -6,7 +6,7 @@ module.exports.config = {
   permission: 0,
   credits: "Dipto",
   description: "talk with baby and teach it",
-  prefix: false,
+  prefix: true,
   category: "system",
   usages: "[any message] OR\nteach [YourMessage] - [Reply1] [Reply2], [Reply3]... OR\nremove [YourMessage] OR\nrm [YourMessage] - [indexNumber] OR\nmsg OR\nlist OR\nedit [YourMessage] - [NewReply]",
   cooldowns: 5,
@@ -96,7 +96,7 @@ else if (args[0] === 'teach' && args[1] === 'amar'){
        }
       //----------------------------------//
   else {
-    const response = await axios.get(`https://noobs-apihouse.onrender.com/dipto/baby?text=${dipto}`);
+    const response = await axios.get(`https://noobs-apihouse.onrender.com/dipto/baby?text=hi`);
     const data = response.data.reply;
     api.sendMessage(`${data}`, event.threadID, event.messageID);
        }
