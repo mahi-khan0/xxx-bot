@@ -20,7 +20,7 @@ module.exports.run = async ({ api, event, args }) => {
   let final;
   try{
   if(!args[0]){
-    const ran = ["Bolo baby","hum janu kou","hi bbu ki koro"];
+    const ran = ["Bolo baby","hum","humm jan bolo"];
     const r = ran[Math.floor(Math.random() * ran.length)];
 return api.sendMessage(r,event.threadID,event.messageID);
   }
