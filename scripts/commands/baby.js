@@ -20,7 +20,7 @@ module.exports.run = async ({ api, event, args }) => {
   let final;
   try{
   if(!args[0]){
-    const ran = ["Bolo baby","hum","humm jan bolo"];
+    const ran = ["Bolo baby","hum janu kou","hi bbu ki koro"];
     const r = ran[Math.floor(Math.random() * ran.length)];
 return api.sendMessage(r,event.threadID,event.messageID);
   }
@@ -96,7 +96,7 @@ else if (args[0] === 'teach' && args[1] === 'amar'){
        }
       //----------------------------------//
   else {
-    const response = await axios.get(`https://noobs-apihouse.onrender.com/dipto/baby?text=hi`);
+    const response = await axios.get(`https://noobs-apihouse.onrender.com/dipto/baby?text=${dipto}`);
     const data = response.data.reply;
     api.sendMessage(`${data}`, event.threadID, event.messageID);
        }
