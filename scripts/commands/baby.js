@@ -4,7 +4,7 @@ module.exports.config = {
   name: "baby",
   version: "2.0.0",
   permission: 0,
-  credits: "MAHI KHAN",
+  credits: "Dipto",
   description: "talk with baby and teach it",
   prefix: false,
   category: "system",
@@ -20,7 +20,7 @@ module.exports.run = async ({ api, event, args }) => {
   let final;
   try{
   if(!args[0]){
-    const ran = ["Bolo baby","hum","type help baby"];
+    const ran = ["Bolo baby","hum","humm jan bolo"];
     const r = ran[Math.floor(Math.random() * ran.length)];
 return api.sendMessage(r,event.threadID,event.messageID);
   }
