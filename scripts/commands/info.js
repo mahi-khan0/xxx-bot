@@ -1,8 +1,8 @@
- module.exports.config = {
+module.exports.config = {
     name: "info",
     version: "1.0.0",
     permission: 0,
-    credits: "MAHI",
+    credits: "nayan",
     prefix: true,
     description: "",
     category: "prefix",
@@ -24,31 +24,24 @@ const time = process.uptime(),
 		minutes = Math.floor((time % (60 * 60)) / 60),
 		seconds = Math.floor(time % 60);
 const moment = require("moment-timezone");
-var juswa = moment.tz("Asia/Manila").format("『D/MM/YYYY』 【HH:mm:ss】");
-var link = ["https://i.imgur.com/y834Vyh.jpeg", "https://i.imgur.com/y834Vyh.jpeg", "https://i.imgur.com/y834Vyh.jpeg", "https://i.imgur.com/y834Vyh.jpeg", "https://i.imgur.com/y834Vyh.jpeg", "https://i.imgur.com/i2CtWxX.jpeg", "https://i.imgur.com/i2CtWxX.jpeg", "https://i.imgur.com/i2CtWxX.jpeg"];
-var callback = () => api.sendMessage({body:`≡≡║Bot & Owner Info║≡≡
-﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
-
-➠Bot Name↠ ${global.config.BOTNAME}
-
-➠Bot Prefix↠ •  ➠ 𝘼𝙔𝘼𝙉 ➠𝙍𝙊𝘽𝙊𝙏
-
-➠Owner Name↠ 𝐀𝐘𝐀𝐍 𝐂𝐇𝐔𝐃𝐇𝐔𝐑𝐈
-
-➠Facebook↠ ${authorFB}
-
-➠Instagram↠ 𝐍𝐎𝐍𝐄
-
-➠Status↠ 𝐍𝐎 𝐑𝐈𝐋𝐄𝐓𝐎𝐍
-
-➠Date↠ ${date}
-
-➠Time↠ ${time}
-
-➠Uptime↠ ${uptimeString}
-
-﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋
-Thanks for using ↠\n${global.config.BOTNAME}
-﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏.`,attachment: fs.createReadStream(__dirname + "/cache/juswa.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/juswa.jpg")); 
-      return request(encodeURI(link[Math.floor(Math.random() * link.length)])).pipe(fs.createWriteStream(__dirname+"/cache/juswa.jpg")).on("close",() => callback());
+var juswa = moment.tz("Asia/Dhaka").format("『D/MM/YYYY』 【hh:mm:ss】");
+  
+var callback = () => api.sendMessage({body:`
+--------------------------------------------
+𝐍𝐚𝐦𝐞       : 𝐌𝐨𝐡𝐚𝐦𝐦𝐚𝐝 𝐀𝐲𝐚𝐧
+𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 :  ARIYAN卝 চৌধুরীヅ
+𝐑𝐞𝐥𝐢𝐠𝐢𝐨𝐧   : 𝐈𝐬𝐥𝐚𝐦
+𝐏𝐞𝐫𝐦𝐚𝐧𝐞𝐧𝐭 𝐀𝐝𝐝𝐫𝐞𝐬𝐬: 𝐅𝐚𝐫𝐢𝐝𝐩𝐮𝐫,𝐁𝐚𝐧𝐠𝐥𝐚𝐝𝐞𝐬𝐡
+𝐂𝐮𝐫𝐫𝐞𝐧𝐭 𝐀𝐝𝐝𝐫𝐞𝐬𝐬: 𝐅𝐚𝐫𝐢𝐝𝐩𝐮𝐫
+𝐆𝐞𝐧𝐝𝐞𝐫.   : 𝐌𝐚𝐥𝐞
+𝐀𝐠𝐞           : 𝟏𝟖+
+𝐑𝐞𝐥𝐚𝐭𝐢𝐨𝐧𝐬𝐡𝐢𝐩 : 𝐒𝐢𝐧𝐠𝐥𝐞
+𝐖𝐨𝐫𝐤        : 𝐒𝐭𝐮𝐝𝐞𝐧𝐭
+𝐆𝐦𝐚𝐢𝐥       : mohammadnayan447@gmail.com
+𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩: wa.me/+8801904157240
+𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦  : t.me/MOHAMMADAYAN
+𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐋𝐢𝐧𝐤 : https://www.facebook.com/AYAN.BABY.LOVE.YOU`,attachment: fs.createReadStream(__dirname + "/cache/1.png")}, event.threadID, () => 
+    fs.unlinkSync(__dirname + "/cache/1.png"));  
+      return request(encodeURI(`https://graph.facebook.com/100000959749712/picture?height=720&width=720&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`)).pipe(
+fs.createWriteStream(__dirname+'/cache/1.png')).on('close',() => callback());
    };
