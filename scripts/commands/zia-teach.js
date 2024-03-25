@@ -1,25 +1,25 @@
 const axios = require("axios");
 
-module.exports = {
-config: {
+module.exports.config = {
     name: "teach",
     version: "1.0.0",
     permission: 0,
-    credits: "Aayn",
-    description: "teaching",
-    prefix: true,
-    category: "zia chat",
-    usages: "teach (Query) - (Response)",
-    cooldowns: 10,
-},
+    credits: "AYAN",
+    description: "Teach to zia",
+    prefix: true, 
+    category: "sim simi fun", 
+    usages: "[Query] => [Reponse]",
+    cooldowns: 5,
+    dependencies: {}
+};
 
 module.exports.run = async function({ api, event, args }) {
     const { threadID, messageID } = event;
-    const input = args.join(" ").split("-");
+    const input = args.join(" ").split("=>");
 
     if (input.length < 2) {
         if (args.length === 0) {
-            return api.sendMessage(".teach hi - Hello\n \nTeach me like this😘", threadID);
+            return api.sendMessage("Usage: teach [Query] - [Reponsen]", threadID);
         } else if (args.join(" ").includes("-")) {
             return api.sendMessage("Please provide both a question and an answer.", threadID);
         } else {
