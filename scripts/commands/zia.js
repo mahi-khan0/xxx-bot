@@ -4,7 +4,7 @@ module.exports.config = {
   permission: 0,
   credits: "Nayan//AYAN",//api rahad
   description: "sms",
-  prefix: false,
+  prefix: true,
   category: "reply",
   usages: "chat zia bot",
   cooldowns: 5,
