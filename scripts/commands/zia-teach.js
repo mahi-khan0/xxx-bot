@@ -15,11 +15,11 @@ module.exports.config = {
 
 module.exports.run = async function({ api, event, args }) {
     const { threadID, messageID } = event;
-    const input = args.join(" ").split("=>");
+    const input = args.join(" ").split("-");
 
     if (input.length < 2) {
         if (args.length === 0) {
-            return api.sendMessage("Usage: teach [Query] - [Reponsen]", threadID);
+            return api.sendMessage("Usage: .teach [𝙌𝙪𝙚𝙧𝙮] - [𝙍𝙚𝙥𝙤𝙣𝙨𝙚]", threadID);
         } else if (args.join(" ").includes("-")) {
             return api.sendMessage("Please provide both a question and an answer.", threadID);
         } else {
@@ -34,7 +34,7 @@ module.exports.run = async function({ api, event, args }) {
         const response = await axios.get(`http://nl2-4.deploy.sbs:2016/sim?teach=${encodeURIComponent(teachQuery)}&ans=${encodeURIComponent(ansQuery)}`);
 
         if (response.status >= 200 && response.status < 300) {
-            api.sendMessage(`▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n╏ Query ↣ ${teachQuery}\n \n\n╏ Response ⇉ ${ansQuery}\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬`, threadID, messageID);
+            api.sendMessage(`▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n╏ 𝙌𝙪𝙚𝙧𝙮 ↣ ${teachQuery}\n \n\n╏ 𝙍𝙚𝙥𝙤𝙣𝙨𝙚 ⇉ ${ansQuery}\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬`, threadID, messageID);
         } else {
             api.sendMessage("An error occurred while teaching.", threadID);
         }
