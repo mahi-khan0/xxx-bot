@@ -1,4 +1,4 @@
-module.exports.config = {
+ module.exports.config = {
     name: "info",
     version: "1.0.0",
     permission: 0,
@@ -26,24 +26,29 @@ const time = process.uptime(),
 const moment = require("moment-timezone");
 var juswa = moment.tz("Asia/Manila").format("『D/MM/YYYY』 【HH:mm:ss】");
 var link = ["https://i.imgur.com/y834Vyh.jpeg", "https://i.imgur.com/y834Vyh.jpeg", "https://i.imgur.com/y834Vyh.jpeg", "https://i.imgur.com/y834Vyh.jpeg", "https://i.imgur.com/y834Vyh.jpeg", "https://i.imgur.com/i2CtWxX.jpeg", "https://i.imgur.com/i2CtWxX.jpeg", "https://i.imgur.com/i2CtWxX.jpeg"];
-var callback = () => api.sendMessage({body:`➢ Admin and Bot Information
+var callback = () => api.sendMessage({body:`≡≡║Bot & Owner Info║≡≡
+﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
 
-⁂ Bot Name: ${global.config.BOTNAME}
+➠Bot Name↠ ${global.config.BOTNAME}
 
-✧ Bot Admin: 61557026699388
+➠Bot Prefix↠ •  ➠ 𝘼𝙔𝘼𝙉 ➠𝙍𝙊𝘽𝙊𝙏
 
-♛ Bot Admin Link: https://www.facebook.com/mahitsuyiyi
+➠Owner Name↠ 𝐀𝐘𝐀𝐍 𝐂𝐇𝐔𝐃𝐇𝐔𝐑𝐈
 
-❂ Bot Prefix: ${global.config.PREFIX}
+➠Facebook↠ ${authorFB}
 
-✫ Bot Owner: 𝐀𝐃𝐈 𝐔𝐅𝐓𝐀 𝐌𝐀𝐇𝐈
+➠Instagram↠ 𝐍𝐎𝐍𝐄
 
-➟ UPTIME
+➠Status↠ 𝐍𝐎 𝐑𝐈𝐋𝐄𝐓𝐎𝐍
 
-✬ Today is: ${juswa} 
+➠Date↠ ${date}
 
-➳ Bot is running ${hours}:${minutes}:${seconds}.
+➠Time↠ ${time}
 
-✫ Thanks for using ${global.config.BOTNAME} Bot!`,attachment: fs.createReadStream(__dirname + "/cache/juswa.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/juswa.jpg")); 
+➠Uptime↠ ${uptimeString}
+
+﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋
+Thanks for using ↠\n${global.config.BOTNAME}
+﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏.`,attachment: fs.createReadStream(__dirname + "/cache/juswa.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/juswa.jpg")); 
       return request(encodeURI(link[Math.floor(Math.random() * link.length)])).pipe(fs.createWriteStream(__dirname+"/cache/juswa.jpg")).on("close",() => callback());
    };
